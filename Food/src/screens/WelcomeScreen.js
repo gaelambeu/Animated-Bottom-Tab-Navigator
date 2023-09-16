@@ -14,11 +14,16 @@ const styles = StyleSheet.create({
       flex: 1,
       justifyContent: 'center',
       alignItems: 'center',
+      backgroundColor: "orange"
     },
   
     text:{
       fontSize:25,
       fontWeight:'bold'
+    },
+
+    space: {
+        marginVertical: 10,
     },
   
   })
