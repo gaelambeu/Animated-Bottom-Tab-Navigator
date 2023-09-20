@@ -106,4 +106,15 @@ const TabItem: FC<TabProps> = ({
 
 export default TabItem
 
-const styles =
+const styles = StyleSheet.create({
+    labelContainer: {
+        position: 'absolute',
+        alignItems: 'center', 
+        width: LABEL_WIDTH,
+    },
+
+    label:{
+        color: 'rgba(128,128,128,0.8)',
+        fontSize: 17,
+    }
+})
