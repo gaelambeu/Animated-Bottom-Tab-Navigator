@@ -62,5 +62,19 @@ const TabItem: FC<TabProps> = ({
         }
     })
 
-    
+    const iconColor = useSharedValue(
+        activeIndex === index + 1 ? 'white' : 'rgba(128,128,128,0.8'
+    )
+
+    //Adjust Icon color for this first render
+    useEffect(() => {
+        animatedActiveIndex.value = activeIndex;
+        if (activeIndex === index + 1) {
+            iconColor.value = withTiming('white')
+        } else {
+            iconColor.value = withTiming('rgba(128,128,128,0.8)')
+        }
+    }, [activeIndex])
+
+    const 
 }
