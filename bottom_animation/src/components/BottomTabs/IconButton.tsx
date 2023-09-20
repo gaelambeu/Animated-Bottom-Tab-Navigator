@@ -19,3 +19,14 @@ const ICON_LIBRARIES: IconLibrary = {
     MaterialCommunityIcons: () => MaterialCommunityIcons,
     //add more libraries as needed
 }
+
+export type IconButtonProps = PressableProps & {
+    icon: string;
+    iconFamily?: 'Feather' | 'MaterialCommunityIcons'
+    variant?: 'text' | 'contained' | 'outline'
+    size?: 'small' | 'medium' | 'big'
+    iconColor?: string
+    roundness?: 'full' | 'medium' | 'small'
+    style?: StyleProp<ViewStyle>
+    onPress?: () => void
+}
