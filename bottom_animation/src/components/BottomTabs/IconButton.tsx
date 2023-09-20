@@ -9,3 +9,7 @@ import {
 } from "react-native";
 import Feather from "@expo/vector-icons/Feather";
 import MaterialCommunityIcons  from "@expo/vector-icons/MaterialCommunityIcons";
+
+export type IconLibrary = {
+    [key: string]: () => React.ComponentType<any>
+}
