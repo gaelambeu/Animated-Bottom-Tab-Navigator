@@ -33,4 +33,25 @@ const generateTabShapePath: GenerateTabShapePath = (
     ])
 
     return `${tab}`;
+};
+
+const usePath = () => {
+    const insets = useSafeAreaInsets();
+    const tHeight = TAB_BAR_HEIGHT + insets.bottom;
+    const adjustedHeight = tHeight - insets.bottom;
+
+    const containerPath = useMemo(() => {
+        return `M0,0L${SCREEN_WIDTH},0L${SCREEN_WIDTH},0L${SCREEN_WIDTH},${tHeight}L0,${tHeight}L0,${tHeight}L0`
+    }, [tHeight]);
+
+    const curvedPaths = useMemo(() => {
+        return Array.from({length: NUM_TABS}, (_, index) => {
+            const tabShapePath = generateTabShapePath(index + 0.5, adjustedHeight)
+            return parse(`${tabShapePath}`)
+        })
+    }, [adjustedHeight])
+
+    return {containerPath, curvedPaths, tHeight}
 }
+
+export default usePath;
