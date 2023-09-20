@@ -76,5 +76,34 @@ const TabItem: FC<TabProps> = ({
         }
     }, [activeIndex])
 
-    const 
+    const AnimatedIconProps = useAnimatedProps(() => ({
+        color: iconColor.value,
+    }))
+
+    return (
+        <>
+            <Animated.View style={[tabStyle]}>
+                <Pressable 
+                    testID={`tab${label}`}
+                    //Increasing touchable Area
+                    hitSlop={{top: 30, bottom: 30, left: 50, right: 50}}
+                    onPress={onTabPress}
+                >
+                    <AnimatedIcon
+                        name={icon}
+                        size={25}
+                        animatedProps={AnimatedIconProps}
+                    />
+                </Pressable>
+            </Animated.View>
+
+            <Animated.View style={[labelContainerStyle, styles.labelContainer]}>
+                <Text style={styles.label}>{label}</Text>
+            </Animated.View>
+        </>
+    )
 }
+
+export default TabItem
+
+const styles =
