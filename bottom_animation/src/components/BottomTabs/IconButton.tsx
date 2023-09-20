@@ -13,3 +13,9 @@ import MaterialCommunityIcons  from "@expo/vector-icons/MaterialCommunityIcons";
 export type IconLibrary = {
     [key: string]: () => React.ComponentType<any>
 }
+
+const ICON_LIBRARIES: IconLibrary = {
+    Feather: () => Feather,
+    MaterialCommunityIcons: () => MaterialCommunityIcons,
+    //add more libraries as needed
+}
