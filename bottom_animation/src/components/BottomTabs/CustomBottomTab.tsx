@@ -61,6 +61,10 @@ export const CustomBottomTab: FC<BottomTabBarProps> = ({
     }
 
     return (
-        
+        <View style={StyleSheet.tabBarContainer}>
+            <Svg width={SCREEN_WIDTH} height={tHeight} style={StyleSheet.shadowMd}>
+                <AnimatedPath fill={'black'} animatedProps={animatedProps}/>
+            </Svg>
+        </View>
     )
 }
