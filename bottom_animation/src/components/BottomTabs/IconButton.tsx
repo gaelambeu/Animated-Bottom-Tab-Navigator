@@ -89,8 +89,27 @@ const styles = StyleSheet.create({
     },
     outlineButton: {
         backgroundColor: 'transparent',
+        borderWidth: 1,
+        borderColor: '#2196F3'
     },
-    fullR: {
-        backgroundColor: 'transparent',
+    fullRoundness: {
+        borderRadius: 100,
+    },
+    mediumRoundness: {
+        borderRadius: 20,
+    },
+    smallRoundness: {
+        borderRadius: 10,
+    },
+    shadow: {
+        shadowColor: '#000',
+        shadowOffset: {
+            width: 0,
+            height: 1,
+        },
+        shadowOpacity: 0.18,
+        shadowRadius: 1.0,
+        
+        elevation: 1,
     },
 })
