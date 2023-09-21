@@ -10,6 +10,7 @@ import Feather from "@expo/vector-icons/Feather";
 import { getPathXCenterByIndex } from "../../utils/Path";
 import usePath from "../../hooks/usePath";
 import { SCREEN_WIDTH } from "../../constants/Screen";
+import iconSet from "@expo/vector-icons/build/FontAwesome5";
 
 export type TabProps = {
     label: string;
@@ -85,7 +86,7 @@ const TabItem: FC<TabProps> = ({
                     onPress={onTabPress}
                 >
                     <AnimatedIcon
-                        name={icon}
+                        name={iconSet}
                         size={25}
                         animatedProps={AnimatedIconProps}
                     />
