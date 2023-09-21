@@ -11,7 +11,6 @@ import { getPathXCenterByIndex } from "../../utils/Path";
 import usePath from "../../hooks/usePath";
 import { SCREEN_WIDTH } from "../../constants/Screen";
 
-
 export type TabProps = {
     label: string;
     icon: string;
@@ -40,7 +39,6 @@ const TabItem: FC<TabProps> = ({
     const tabStyle = useAnimatedStyle(() =>{
         const translateY = animatedActiveIndex.value - 1 === index ? -35 : 20;
         const iconPositionX = iconPosition - index * ICON_SIZE;
-        
         return {
             width: ICON_SIZE,
             height: ICON_SIZE,
@@ -50,10 +48,8 @@ const TabItem: FC<TabProps> = ({
             ]
         }
     })
-
     const labelContainerStyle = useAnimatedStyle(() =>{
         const translateY = animatedActiveIndex.value - 1 === index ? 36 : 100;
-
         return {
             transform: [
                 {translateY: withTiming(translateY)},
@@ -61,9 +57,8 @@ const TabItem: FC<TabProps> = ({
             ]
         }
     })
-
     const iconColor = useSharedValue(
-        activeIndex === index + 1 ? 'white' : 'rgba(128,128,128,0.8'
+        activeIndex === index + 1 ? 'white' : 'rgba(128,128,128,0.8)'
     )
 
     //Adjust Icon color for this first render
@@ -98,7 +93,7 @@ const TabItem: FC<TabProps> = ({
             </Animated.View>
 
             <Animated.View style={[labelContainerStyle, styles.labelContainer]}>
-                <Text style={styles.label}>{label}</Text>
+                <Text style={styles.label}>{label}$</Text>
             </Animated.View>
         </>
     )
