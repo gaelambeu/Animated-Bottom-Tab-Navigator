@@ -73,12 +73,17 @@ export const CustomBottomTab: FC<BottomTabBarProps> = ({
                         height: tHeight,
                     }
                 ]}>
-                    {state.routes.map((route, index) =>{
+                    {state.routes.map((route, index) => {
                         const {options} = descriptors[route.key]
                         const label = options.tabBarLabel ? options.tabBarLabel : route.name;
                         return(
                             <TabItem
                                 key={index.toString()}
+                                label={label as string}
+                                icon={selectIcon(route.name)}
+                                activeIndex={state.index + 1}
+                                index={index}
+                                onTabPress={() => handleTabPress(index + 1, route.name)}
                             />
                         )
                     })
@@ -88,3 +93,14 @@ export const CustomBottomTab: FC<BottomTabBarProps> = ({
         </View>
     )
 }
+export default CustomBottomTab;
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+    },
+    tabBarContainer: {
+        position: 'absolute',
+        
+    },
+})
