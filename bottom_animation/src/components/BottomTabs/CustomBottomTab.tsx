@@ -54,4 +54,13 @@ export const CustomBottomTab: FC<BottomTabBarProps> = ({
             d: `${containerPath} ${currentPath}`
         }
     })
+
+    const handleTabPress = (index: number, tab: string) => {
+        navigation.navigate(tab)
+        progress.value = withTiming(index)
+    }
+
+    return (
+        
+    )
 }
