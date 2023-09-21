@@ -30,3 +30,36 @@ export type IconButtonProps = PressableProps & {
     style?: StyleProp<ViewStyle>
     onPress?: () => void
 }
+
+const IconButton: FC<IconButtonProps> = ({
+    icon,
+    iconFamily = 'Feather',
+    variant = 'contained',
+    size = 'medium',
+    iconColor = 'white',
+    roundness = 'medium',
+    style = {},
+    onPress, 
+    ...rest
+}: IconButtonProps) => {
+    const Icon = ICON_LIBRARIES[iconFamily]();
+    const iconSize = size === 'big' ? 24 : size === 'medium' ? 16 : 12;
+    const buttonSize = size === 'big' ? 48 : size === 'medium' ? 36 : 24;
+
+    const buttonStyles = [
+        styles.button,
+        styles[`${variant}Button`],
+        styles[`${roundness}Roundness`],
+        {width: buttonSize, height: buttonSize},
+        style,
+    ] as StyleProp<ViewStyle>;
+
+    return (
+        <Pressable
+            {...rest}
+            onPress={on}
+        >
+
+        </Pressable>
+    )
+}
