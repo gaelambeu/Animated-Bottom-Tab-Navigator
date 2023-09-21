@@ -18,4 +18,31 @@ import { BottomTabBarProps } from "@react-navigation/bottom-tabs";
 
 const AnimatedPath = Animated.createAnimatedComponent(Path);
 
-export const Custom
+export const CustomBottomTab: FC<BottomTabBarProps> = ({
+    state,
+    descriptors, 
+    navigation,
+}) => {
+    const {containerPath, curvedPaths, tHeight} = usePath();
+    const circleXCoordinate = useSharedValue(0);
+    const progress = useSharedValue(1);
+    const handleMoveCircle = (currentPath: string) => {
+        circleXCoordinate.value = getPathXCenter(currentPath);
+    }
+    const selectIcon = (routeName: string) => {
+        switch (routeName) {
+            case 'Products':
+                return 'home'
+            case 'Cart':
+                return 'shopping-bag'
+            case 'Favourites':
+                return 'star'
+            case 'Profile':
+                return 'user'
+            default:
+                return 'home'
+        }
+    }
+
+    const
+}
