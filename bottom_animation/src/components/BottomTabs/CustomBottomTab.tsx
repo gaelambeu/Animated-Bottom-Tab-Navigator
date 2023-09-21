@@ -43,6 +43,15 @@ export const CustomBottomTab: FC<BottomTabBarProps> = ({
                 return 'home'
         }
     }
-
-    const
+    const animatedProps = useAnimatedProps(() => {
+        const currentPath = interpolatePath(
+            progress.value,
+            Array.from({length: curvedPaths.length}, (_, index) => index + 1),
+            curvedPaths,
+        )
+        runOnJS(handleMoveCircle)(currentPath)
+        return {
+            d: `${containerPath} ${currentPath}`
+        }
+    })
 }
