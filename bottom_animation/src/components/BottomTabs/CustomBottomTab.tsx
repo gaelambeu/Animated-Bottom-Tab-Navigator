@@ -70,11 +70,20 @@ export const CustomBottomTab: FC<BottomTabBarProps> = ({
                 style={[
                     styles.tabItemsContainer,
                     {
-                        height: tHeight
+                        height: tHeight,
                     }
-                ]}
-            >
-
+                ]}>
+                    {state.routes.map((route, index) =>{
+                        const {options} = descriptors[route.key]
+                        const label = options.tabBarLabel ? options.tabBarLabel : route.name;
+                        return(
+                            <TabItem
+                                key={index.toString()}
+                            />
+                        )
+                    })
+                        
+                    }
             </View>
         </View>
     )
