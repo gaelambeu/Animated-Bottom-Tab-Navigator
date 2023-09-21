@@ -61,8 +61,8 @@ export const CustomBottomTab: FC<BottomTabBarProps> = ({
     }
 
     return (
-        <View style={StyleSheet.tabBarContainer}>
-            <Svg width={SCREEN_WIDTH} height={tHeight} style={StyleSheet.shadowMd}>
+        <View style={styles.tabBarContainer}>
+            <Svg width={SCREEN_WIDTH} height={tHeight} style={styles.shadowMd}>
                 <AnimatedPath fill={'black'} animatedProps={animatedProps}/>
             </Svg>
                 <AnimatedCircle circleX={circleXCoordinate}/>
@@ -101,6 +101,19 @@ const styles = StyleSheet.create({
     },
     tabBarContainer: {
         position: 'absolute',
-        
+        bottom: 0,
+        zIndex: 2,
+    },
+    tabItemsContainer: {
+        position: 'absolute',
+        flexDirection: 'row',
+        width: '100%',
+    },
+    shadowMd: {
+        elevation: 3,
+        shadowColor: '#000',
+        shadowOpacity: 0.2,
+        shadowRadius: 3,
+        shadowOffset: {width: 0, height: 3},
     },
 })
