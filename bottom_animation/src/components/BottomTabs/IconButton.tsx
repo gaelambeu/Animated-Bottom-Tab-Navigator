@@ -57,9 +57,40 @@ const IconButton: FC<IconButtonProps> = ({
     return (
         <Pressable
             {...rest}
-            onPress={on}
-        >
+            onPress={onPress}
+            style={({pressed}) => [
+                buttonStyles,
+                pressed && styles.buttonPressed,
+                pressed && styles.shadow,
+            ]}>
+
+            <Icon name={icon} size={iconSize} color={iconColor} />
 
         </Pressable>
     )
 }
+
+export default IconButton
+
+const styles = StyleSheet.create({
+    button: {
+        borderRadius: 40,
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    buttonPressed: {
+        opacity: 0.9,
+    },
+    containedButton: {
+        backgroundColor: '#2196F3',
+    },
+    textButton: {
+        backgroundColor: 'transparent',
+    },
+    outlineButton: {
+        backgroundColor: 'transparent',
+    },
+    fullR: {
+        backgroundColor: 'transparent',
+    },
+})
