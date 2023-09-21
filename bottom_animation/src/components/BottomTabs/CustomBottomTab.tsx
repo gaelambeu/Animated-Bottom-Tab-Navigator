@@ -15,3 +15,7 @@ import { getPathXCenter } from "../../utils/Path";
 import TabItem from "./Tabitem";
 import AnimatedCircle from "./AnimatedCircle";
 import { BottomTabBarProps } from "@react-navigation/bottom-tabs";
+
+const AnimatedPath = Animated.createAnimatedComponent(Path);
+
+export const Custom
